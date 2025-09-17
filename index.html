@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,288 +11,285 @@
             box-sizing: border-box;
         }
 
-```
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        min-height: 100vh;
-        color: #333;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-    }
-
-    .header {
-        text-align: center;
-        margin-bottom: 40px;
-        color: white;
-    }
-
-    .header h1 {
-        font-size: 3em;
-        margin-bottom: 10px;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
-
-    .header p {
-        font-size: 1.2em;
-        opacity: 0.9;
-    }
-
-    .tabs {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 30px;
-        background: white;
-        border-radius: 10px;
-        padding: 5px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
-
-    .tab {
-        flex: 1;
-        padding: 15px 30px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        font-size: 1.1em;
-        font-weight: 600;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-    }
-
-    .tab.active {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    .tab-content {
-        display: none;
-        background: white;
-        border-radius: 15px;
-        padding: 30px;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-        backdrop-filter: blur(10px);
-    }
-
-    .tab-content.active {
-        display: block;
-        animation: fadeIn 0.5s ease-in;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    .upload-section {
-        text-align: center;
-        padding: 40px;
-        border: 3px dashed #ddd;
-        border-radius: 15px;
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        margin-bottom: 20px;
-        transition: all 0.3s ease;
-    }
-
-    .upload-section:hover {
-        border-color: #667eea;
-        background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-    }
-
-    .upload-section input[type="file"] {
-        display: none;
-    }
-
-    .upload-btn {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 15px 30px;
-        border: none;
-        border-radius: 50px;
-        font-size: 1.1em;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    }
-
-    .upload-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    }
-
-    .battle-arena {
-        text-align: center;
-    }
-
-    .vs-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 30px;
-        margin: 30px 0;
-    }
-
-    .picture-card {
-        flex: 1;
-        background: white;
-        border-radius: 15px;
-        padding: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .picture-card:hover {
-        transform: translateY(-10px) scale(1.02);
-        box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-    }
-
-    .picture-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8));
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        border-radius: 15px;
-    }
-
-    .picture-card:hover::before {
-        opacity: 1;
-    }
-
-    .picture-card img {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-        border-radius: 10px;
-        margin-bottom: 15px;
-    }
-
-    .vote-btn {
-        background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
-        color: white;
-        padding: 12px 25px;
-        border: none;
-        border-radius: 25px;
-        font-size: 1.1em;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        position: relative;
-        z-index: 2;
-    }
-
-    .vote-btn:hover {
-        background: linear-gradient(135deg, #45a049 0%, #4CAF50 100%);
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    .vs-text {
-        font-size: 2.5em;
-        font-weight: bold;
-        color: #667eea;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.1); }
-    }
-
-    .stats {
-        margin-top: 30px;
-        text-align: center;
-    }
-
-    .stats h3 {
-        color: #667eea;
-        margin-bottom: 15px;
-        font-size: 1.5em;
-    }
-
-    .stat-item {
-        display: inline-block;
-        margin: 0 20px;
-        padding: 15px 25px;
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        border-radius: 10px;
-        font-weight: 600;
-    }
-
-    .uploaded-pictures {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 20px;
-        margin-top: 20px;
-    }
-
-    .uploaded-picture {
-        background: white;
-        border-radius: 10px;
-        padding: 15px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-    }
-
-    .uploaded-picture:hover {
-        transform: translateY(-5px);
-    }
-
-    .uploaded-picture img {
-        width: 100%;
-        height: 150px;
-        object-fit: cover;
-        border-radius: 8px;
-        margin-bottom: 10px;
-    }
-
-    .picture-info {
-        text-align: center;
-    }
-
-    .picture-info .votes {
-        color: #667eea;
-        font-weight: 600;
-    }
-
-    .no-pictures {
-        text-align: center;
-        color: #666;
-        font-style: italic;
-        padding: 40px;
-    }
-
-    @media (max-width: 768px) {
-        .vs-container {
-            flex-direction: column;
-            gap: 20px;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
         }
 
-        .vs-text {
-            font-size: 2em;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
         }
 
         .header h1 {
-            font-size: 2em;
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-    }
-</style>
-```
 
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 10px;
+            padding: 5px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .tab {
+            flex: 1;
+            padding: 15px 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .tab.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .tab-content {
+            display: none;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .upload-section {
+            text-align: center;
+            padding: 40px;
+            border: 3px dashed #ddd;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .upload-section:hover {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+        }
+
+        .upload-section input[type="file"] {
+            display: none;
+        }
+
+        .upload-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .upload-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .battle-arena {
+            text-align: center;
+        }
+
+        .vs-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .picture-card {
+            flex: 1;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .picture-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .picture-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 15px;
+        }
+
+        .picture-card:hover::before {
+            opacity: 1;
+        }
+
+        .picture-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .vote-btn {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .vote-btn:hover {
+            background: linear-gradient(135deg, #45a049 0%, #4CAF50 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .vs-text {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .stats {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .stats h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .stat-item {
+            display: inline-block;
+            margin: 0 20px;
+            padding: 15px 25px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .uploaded-pictures {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .uploaded-picture {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .uploaded-picture:hover {
+            transform: translateY(-5px);
+        }
+
+        .uploaded-picture img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .picture-info {
+            text-align: center;
+        }
+
+        .picture-info .votes {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .no-pictures {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            padding: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .vs-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .vs-text {
+                font-size: 2em;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -302,275 +298,343 @@
             <p>Upload amazing pictures and let the community decide which ones reign supreme!</p>
         </div>
 
-```
-    <div class="tabs">
-        <button class="tab active" onclick="switchTab('upload')">📸 Upload</button>
-        <button class="tab" onclick="switchTab('vote')">⚔️ Battle</button>
-        <button class="tab" onclick="switchTab('gallery')">🖼️ Gallery</button>
-    </div>
-
-    <!-- Upload Tab -->
-    <div id="upload" class="tab-content active">
-        <div class="upload-section">
-            <h2>Share Your Best Shot</h2>
-            <p>Upload a picture to enter the battle arena!</p>
-            <br>
-            <input type="file" id="fileInput" accept="image/*" onchange="uploadPicture(event)">
-            <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
-                Choose Picture
-            </button>
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('upload')">📸 Upload</button>
+            <button class="tab" onclick="switchTab('vote')">⚔️ Battle</button>
+            <button class="tab" onclick="switchTab('gallery')">🖼️ Gallery</button>
         </div>
-        <div class="uploaded-pictures" id="recentUploads"></div>
+
+        <!-- Upload Tab -->
+        <div id="upload" class="tab-content active">
+            <div class="upload-section">
+                <h2>Share Your Best Shot</h2>
+                <p>Upload a picture to enter the battle arena!</p>
+                <br>
+                <input type="file" id="fileInput" accept="image/*" multiple onchange="uploadMultiplePictures(event)">
+                <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                    Choose Pictures (Multiple)
+                </button>
+                <p style="margin-top: 10px; color: #666; font-size: 0.9em;">You can select multiple pictures at once!</p>
+            </div>
+            <div class="uploaded-pictures" id="recentUploads"></div>
+        </div>
+
+        <!-- Voting Tab -->
+        <div id="vote" class="tab-content">
+            <div class="battle-arena">
+                <h2>⚔️ Choose Your Champion</h2>
+                <p>Vote for the picture that catches your eye!</p>
+                
+                <div class="vs-container" id="battleArena">
+                    <div class="no-pictures">
+                        Upload some pictures first to start the battle!
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <h3>Battle Statistics</h3>
+                    <div class="stat-item">
+                        <div>Total Pictures: <span id="totalPictures">0</span></div>
+                    </div>
+                    <div class="stat-item">
+                        <div>Total Votes: <span id="totalVotes">0</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Tab -->
+        <div id="gallery" class="tab-content">
+            <h2>🏆 Hall of Fame</h2>
+            <p>Browse all pictures ranked by popularity</p>
+            <div class="uploaded-pictures" id="galleryPictures"></div>
+        </div>
     </div>
 
-    <!-- Voting Tab -->
-    <div id="vote" class="tab-content">
-        <div class="battle-arena">
-            <h2>⚔️ Choose Your Champion</h2>
-            <p>Vote for the picture that catches your eye!</p>
+    <script>
+        // In-memory storage (in a real app, you'd use a database)
+        let pictures = [];
+        let totalVotes = 0;
+
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSampleData();
+            updateStats();
+        });
+
+        function loadSampleData() {
+            // Add some sample pictures for demonstration
+            const samplePictures = [
+                {
+                    id: 1,
+                    url: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQxIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzY2N2VlYTtzdG9wLW9wYWNpdHk6MSIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNzY0YmEyO3N0b3Atb3BhY2l0eToxIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkaWVudDEpIiAvPgogIDx0ZXh0IHg9IjUwJSIgeT0iNDAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSI0OCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIj7wn5OKPC90ZXh0PgogIDx0ZXh0IHg9IjUwJSIgeT0iNjAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyNCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIj5TdW5zZXQ8L3RleHQ+Cjwvc3ZnPgo=',
+                    votes: 15,
+                    name: 'Beautiful Sunset'
+                },
+                {
+                    id: 2,
+                    url: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQyIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzRDQUY1MDtzdG9wLW9wYWNpdHk6MSIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNDVhMDQ5O3N0b3Atb3BhY2l0eToxIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkaWVudDIpIiAvPgogIDx0ZXh0IHg9IjUwJSIgeT0iNDAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSI0OCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIj7wn48zPC90ZXh0PgogIDx0ZXh0IHg9IjUwJSIgeT0iNjAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyNCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIj5Gb3Jlc3Q8L3RleHQ+Cjwvc3ZnPgo=',
+                    votes: 12,
+                    name: 'Forest Path'
+                },
+                {
+                    id: 3,
+                    url: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQzIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzIxOTZGMztzdG9wLW9wYWNpdHk6MSIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMDM5QkU1O3N0b3Atb3BhY2l0eToxIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkaWVudDMpIiAvPgogIDx0ZXh0IHg9IjUwJSIgeT0iNDAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSI0OCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIj7wn4yKPC90ZXh0PgogIDx0ZXh0IHg9IjUwJSIgeT0iNjAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyNCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIj5PY2VhbjwvdGV4dD4KPC9zdmc+Cg==',
+                    votes: 20,
+                    name: 'Ocean Wave'
+                }
+            ];
             
-            <div class="vs-container" id="battleArena">
-                <div class="no-pictures">
-                    Upload some pictures first to start the battle!
-                </div>
-            </div>
+            pictures = samplePictures;
+            updateAllDisplays();
+        }
 
-            <div class="stats">
-                <h3>Battle Statistics</h3>
-                <div class="stat-item">
-                    <div>Total Pictures: <span id="totalPictures">0</span></div>
-                </div>
-                <div class="stat-item">
-                    <div>Total Votes: <span id="totalVotes">0</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Gallery Tab -->
-    <div id="gallery" class="tab-content">
-        <h2>🏆 Hall of Fame</h2>
-        <p>Browse all pictures ranked by popularity</p>
-        <div class="uploaded-pictures" id="galleryPictures"></div>
-    </div>
-</div>
-
-<script>
-    // In-memory storage (in a real app, you'd use a database)
-    let pictures = [];
-    let totalVotes = 0;
-
-    // Initialize the app
-    document.addEventListener('DOMContentLoaded', function() {
-        loadSampleData();
-        updateStats();
-    });
-
-    function loadSampleData() {
-        // Add some sample pictures for demonstration
-        const samplePictures = [
-            {
-                id: 1,
-                url: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQxIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzY2N2VlYTtzdG9wLW9wYWNpdHk6MSIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNzY0YmEyO3N0b3Atb3BhY2l0eToxIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkaWVudDEpIiAvPgogIDx0ZXh0IHg9IjUwJSIgeT0iNDAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSI0OCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIj7wn5OKPC90ZXh0PgogIDx0ZXh0IHg9IjUwJSIgeT0iNjAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyNCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIj5TdW5zZXQ8L3RleHQ+Cjwvc3ZnPgo=',
-                votes: 15,
-                name: 'Beautiful Sunset'
-            },
-            {
-                id: 2,
-                url: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQyIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzRDQUY1MDtzdG9wLW9wYWNpdHk6MSIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNDVhMDQ5O3N0b3Atb3BhY2l0eToxIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkaWVudDIpIiAvPgogIDx0ZXh0IHg9IjUwJSIgeT0iNDAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSI0OCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIj7wn48zPC90ZXh0PgogIDx0ZXh0IHg9IjUwJSIgeT0iNjAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyNCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIj5Gb3Jlc3Q8L3RleHQ+Cjwvc3ZnPgo=',
-                votes: 12,
-                name: 'Forest Path'
-            },
-            {
-                id: 3,
-                url: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQzIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzIxOTZGMztzdG9wLW9wYWNpdHk6MSIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMDM5QkU1O3N0b3Atb3BhY2l0eToxIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkaWVudDMpIiAvPgogIDx0ZXh0IHg9IjUwJSIgeT0iNDAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSI0OCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIj7wn4yKPC90ZXh0PgogIDx0ZXh0IHg9IjUwJSIgeT0iNjAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyNCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIj5PY2VhbjwvdGV4dD4KPC9zdmc+Cg==',
-                votes: 20,
-                name: 'Ocean Wave'
+        function switchTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+            
+            // Update displays when switching tabs
+            if (tabName === 'vote') {
+                setupBattle();
+            } else if (tabName === 'gallery') {
+                updateGallery();
             }
-        ];
-        
-        pictures = samplePictures;
-        updateAllDisplays();
-    }
+        }
 
-    function switchTab(tabName) {
-        // Hide all tab contents
-        document.querySelectorAll('.tab-content').forEach(content => {
-            content.classList.remove('active');
-        });
-        
-        // Remove active class from all tabs
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.classList.remove('active');
-        });
-        
-        // Show selected tab content
-        document.getElementById(tabName).classList.add('active');
-        
-        // Add active class to clicked tab
-        event.target.classList.add('active');
-        
-        // Update displays when switching tabs
-        if (tabName === 'vote') {
-            setupBattle();
-        } else if (tabName === 'gallery') {
-            updateGallery();
+        function uploadMultiplePictures(event) {
+            const files = event.target.files;
+            if (!files || files.length === 0) return;
+            
+            let uploadedCount = 0;
+            let totalFiles = files.length;
+            
+            // Show upload progress
+            const uploadSection = document.querySelector('.upload-section');
+            const progressDiv = document.createElement('div');
+            progressDiv.id = 'uploadProgress';
+            progressDiv.style.marginTop = '20px';
+            progressDiv.innerHTML = `<p>Uploading ${totalFiles} pictures... <span id="progressText">0/${totalFiles}</span></p>`;
+            uploadSection.appendChild(progressDiv);
+            
+            // Process each file
+            Array.from(files).forEach((file, index) => {
+                // Validate file type
+                if (!file.type.startsWith('image/')) {
+                    console.warn(`Skipping non-image file: ${file.name}`);
+                    uploadedCount++;
+                    updateProgress();
+                    return;
+                }
+                
+                // Validate file size (5MB limit)
+                if (file.size > 5 * 1024 * 1024) {
+                    console.warn(`Skipping large file: ${file.name} (over 5MB)`);
+                    uploadedCount++;
+                    updateProgress();
+                    return;
+                }
+                
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const newPicture = {
+                        id: pictures.length + 1 + index,
+                        url: e.target.result,
+                        votes: 0,
+                        name: file.name.replace(/\.[^/.]+$/, "") // Remove file extension
+                    };
+                    
+                    pictures.push(newPicture);
+                    uploadedCount++;
+                    updateProgress();
+                    
+                    // Update displays when all files are processed
+                    if (uploadedCount === totalFiles) {
+                        updateAllDisplays();
+                        
+                        // Show success message and cleanup
+                        setTimeout(() => {
+                            alert(`Successfully uploaded ${pictures.length - (totalFiles - uploadedCount)} pictures! 🎉`);
+                            document.getElementById('uploadProgress')?.remove();
+                            event.target.value = ''; // Clear the input
+                        }, 500);
+                    }
+                };
+                
+                reader.readAsDataURL(file);
+            });
+            
+            function updateProgress() {
+                const progressText = document.getElementById('progressText');
+                if (progressText) {
+                    progressText.textContent = `${uploadedCount}/${totalFiles}`;
+                }
+            }
         }
-    }
 
-    function uploadPicture(event) {
-        const file = event.target.files[0];
-        if (!file) return;
-        
-        // Validate file type
-        if (!file.type.startsWith('image/')) {
-            alert('Please select an image file!');
-            return;
-        }
-        
-        // Validate file size (5MB limit)
-        if (file.size > 5 * 1024 * 1024) {
-            alert('File size must be less than 5MB!');
-            return;
-        }
-        
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const newPicture = {
-                id: pictures.length + 1,
-                url: e.target.result,
-                votes: 0,
-                name: file.name.replace(/\.[^/.]+$/, "") // Remove file extension
+        function uploadPicture(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            // Validate file type
+            if (!file.type.startsWith('image/')) {
+                alert('Please select an image file!');
+                return;
+            }
+            
+            // Validate file size (5MB limit)
+            if (file.size > 5 * 1024 * 1024) {
+                alert('File size must be less than 5MB!');
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const newPicture = {
+                    id: pictures.length + 1,
+                    url: e.target.result,
+                    votes: 0,
+                    name: file.name.replace(/\.[^/.]+$/, "") // Remove file extension
+                };
+                
+                pictures.push(newPicture);
+                updateAllDisplays();
+                
+                // Show success message
+                alert('Picture uploaded successfully! 🎉');
+                
+                // Clear the input
+                event.target.value = '';
             };
             
-            pictures.push(newPicture);
-            updateAllDisplays();
-            
-            // Show success message
-            alert('Picture uploaded successfully! 🎉');
-            
-            // Clear the input
-            event.target.value = '';
-        };
-        
-        reader.readAsDataURL(file);
-    }
-
-    function setupBattle() {
-        const arena = document.getElementById('battleArena');
-        
-        if (pictures.length < 2) {
-            arena.innerHTML = '<div class="no-pictures">Upload at least 2 pictures to start the battle!</div>';
-            return;
+            reader.readAsDataURL(file);
         }
-        
-        // Get two random pictures
-        const shuffled = [...pictures].sort(() => 0.5 - Math.random());
-        const pic1 = shuffled[0];
-        const pic2 = shuffled[1];
-        
-        arena.innerHTML = `
-            <div class="picture-card" onclick="vote(${pic1.id}, ${pic2.id})">
-                <img src="${pic1.url}" alt="${pic1.name}">
-                <h3>${pic1.name}</h3>
-                <p>Votes: ${pic1.votes}</p>
-                <button class="vote-btn">Vote for this!</button>
-            </div>
-            
-            <div class="vs-text">VS</div>
-            
-            <div class="picture-card" onclick="vote(${pic2.id}, ${pic1.id})">
-                <img src="${pic2.url}" alt="${pic2.name}">
-                <h3>${pic2.name}</h3>
-                <p>Votes: ${pic2.votes}</p>
-                <button class="vote-btn">Vote for this!</button>
-            </div>
-        `;
-    }
 
-    function vote(winnerId, loserId) {
-        // Find and update the winner
-        const winner = pictures.find(p => p.id === winnerId);
-        if (winner) {
-            winner.votes++;
-            totalVotes++;
+        function setupBattle() {
+            const arena = document.getElementById('battleArena');
             
-            // Show voting feedback
-            alert(`Great choice! You voted for "${winner.name}" 🎯`);
+            if (pictures.length < 2) {
+                arena.innerHTML = '<div class="no-pictures">Upload at least 2 pictures to start the battle!</div>';
+                return;
+            }
             
-            // Setup next battle
-            setTimeout(() => {
+            // Get two random pictures
+            const shuffled = [...pictures].sort(() => 0.5 - Math.random());
+            const pic1 = shuffled[0];
+            const pic2 = shuffled[1];
+            
+            arena.innerHTML = `
+                <div class="picture-card" onclick="vote(${pic1.id}, ${pic2.id})">
+                    <img src="${pic1.url}" alt="${pic1.name}">
+                    <h3>${pic1.name}</h3>
+                    <p>Votes: ${pic1.votes}</p>
+                    <button class="vote-btn">Vote for this!</button>
+                </div>
+                
+                <div class="vs-text">VS</div>
+                
+                <div class="picture-card" onclick="vote(${pic2.id}, ${pic1.id})">
+                    <img src="${pic2.url}" alt="${pic2.name}">
+                    <h3>${pic2.name}</h3>
+                    <p>Votes: ${pic2.votes}</p>
+                    <button class="vote-btn">Vote for this!</button>
+                </div>
+            `;
+        }
+
+        function vote(winnerId, loserId) {
+            // Find and update the winner
+            const winner = pictures.find(p => p.id === winnerId);
+            if (winner) {
+                winner.votes++;
+                totalVotes++;
+                
+                // Show voting feedback
+                alert(`Great choice! You voted for "${winner.name}" 🎯`);
+                
+                // Setup next battle
+                setTimeout(() => {
+                    setupBattle();
+                    updateStats();
+                    updateGallery();
+                }, 500);
+            }
+        }
+
+        function updateStats() {
+            document.getElementById('totalPictures').textContent = pictures.length;
+            document.getElementById('totalVotes').textContent = totalVotes;
+        }
+
+        function updateRecentUploads() {
+            const container = document.getElementById('recentUploads');
+            const recent = pictures.slice(-6); // Show last 6 uploads
+            
+            if (recent.length === 0) {
+                container.innerHTML = '<div class="no-pictures">No pictures uploaded yet. Be the first! 🚀</div>';
+                return;
+            }
+            
+            container.innerHTML = recent.map(pic => `
+                <div class="uploaded-picture">
+                    <img src="${pic.url}" alt="${pic.name}">
+                    <div class="picture-info">
+                        <h4>${pic.name}</h4>
+                        <p class="votes">${pic.votes} votes</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateGallery() {
+            const container = document.getElementById('galleryPictures');
+            const sorted = [...pictures].sort((a, b) => b.votes - a.votes);
+            
+            if (sorted.length === 0) {
+                container.innerHTML = '<div class="no-pictures">No pictures in the gallery yet! 📷</div>';
+                return;
+            }
+            
+            container.innerHTML = sorted.map((pic, index) => `
+                <div class="uploaded-picture">
+                    <img src="${pic.url}" alt="${pic.name}">
+                    <div class="picture-info">
+                        <h4>${index === 0 ? '🏆 ' : ''}${pic.name}</h4>
+                        <p class="votes">${pic.votes} votes</p>
+                        ${index < 3 ? `<p style="color: gold; font-weight: bold;">#${index + 1}</p>` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateAllDisplays() {
+            updateStats();
+            updateRecentUploads();
+            updateGallery();
+            if (document.getElementById('vote').classList.contains('active')) {
                 setupBattle();
-                updateStats();
-                updateGallery();
-            }, 500);
+            }
         }
-    }
 
-    function updateStats() {
-        document.getElementById('totalPictures').textContent = pictures.length;
-        document.getElementById('totalVotes').textContent = totalVotes;
-    }
-
-    function updateRecentUploads() {
-        const container = document.getElementById('recentUploads');
-        const recent = pictures.slice(-6); // Show last 6 uploads
-        
-        if (recent.length === 0) {
-            container.innerHTML = '<div class="no-pictures">No pictures uploaded yet. Be the first! 🚀</div>';
-            return;
+        // Calculate total votes from existing pictures
+        function calculateTotalVotes() {
+            totalVotes = pictures.reduce((sum, pic) => sum + pic.votes, 0);
         }
-        
-        container.innerHTML = recent.map(pic => `
-            <div class="uploaded-picture">
-                <img src="${pic.url}" alt="${pic.name}">
-                <div class="picture-info">
-                    <h4>${pic.name}</h4>
-                    <p class="votes">${pic.votes} votes</p>
-                </div>
-            </div>
-        `).join('');
-    }
 
-    function updateGallery() {
-        const container = document.getElementById('galleryPictures');
-        const sorted = [...pictures].sort((a, b) => b.votes - a.votes);
-        
-        if (sorted.length === 0) {
-            container.innerHTML = '<div class="no-pictures">No pictures in the gallery yet! 📷</div>';
-            return;
-        }
-        
-        container.innerHTML = sorted.map((pic, index) => `
-            <div class="uploaded-picture">
-                <img src="${pic.url}" alt="${pic.name}">
-                <div class="picture-info">
-                    <h4>${index === 0 ? '🏆 ' : ''}${pic.name}</h4>
-                    <p class="votes">${pic.votes} votes</p>
-                    ${index < 3 ? `<p style="color: gold; font-weight: bold;">#${index + 1}</p>` : ''}
-                </div>
-            </div>
-        `).join('');
-    }
-
-    function updateAllDisplays() {
-        updateStats();
-        updateRecentUploads();
-        updateGallery();
-        if (document.getElementById('vote').classList.contains('active')) {
-            setupBattle();
-        }
-    }
-
-    // Calculate total votes from existing pictures
-    function calculateTotalVotes() {
-        totalVotes = pictures.reduce((sum, pic) => sum + pic.votes, 0);
-    }
-
-    // Initialize total votes
-    calculateTotalVotes();
-</script>
-```
-
+        // Initialize total votes
+        calculateTotalVotes();
+    </script>
 </body>
 </html>
